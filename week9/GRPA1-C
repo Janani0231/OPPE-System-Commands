@@ -1,0 +1,14 @@
+script(){ echo '
+BEGIN{
+ FS=",";
+ sum=0;
+}
+{
+ sum=sum+NF;
+}
+END{
+ print sum;
+}
+' >yourScript.awk
+awk -f yourScript.awk marks.csv
+}
