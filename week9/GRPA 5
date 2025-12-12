@@ -1,0 +1,4 @@
+script() { 
+sed -e "/[[:alnum:]+](.*)[[:space:]]*{/i # START FUNCTION" \
+    -e "/^[[:space:]]*}/a # END FUNCTION" functions.sh
+}
