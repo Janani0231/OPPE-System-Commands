@@ -1,0 +1,15 @@
+script(){ echo '
+BEGIN{  
+	FS = ","
+} 
+
+{
+	EID = $1
+	Gender= $4
+	if (Gender ~ /Female/) {
+		print EID"@xyz.com"
+        }
+}
+' >yourScript.awk
+awk -f yourScript.awk EmployeeDetails.csv
+}
